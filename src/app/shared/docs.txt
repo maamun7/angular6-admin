@@ -1,1 +1,0 @@
-This module doesn't have a root component or any routing declarations because it only contains components that other modules will import to use. There are no views or logic in the SharedModule
