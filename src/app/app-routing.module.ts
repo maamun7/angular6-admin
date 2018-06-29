@@ -7,9 +7,10 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
+
   {
-    path: 'user',
-    loadChildren: './users/users.module#UsersModule'
+    path: 'admin',
+    loadChildren: './features/features.module#FeaturesModule'
   }
 ];
 
