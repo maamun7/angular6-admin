@@ -1,5 +1,42 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header></app-header>
-<app-sidebar></app-sidebar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="m-grid m-grid--hor m-grid--root m-page">
+    <!-- Header -->
+    <app-header></app-header>
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+        <app-left-side-bar></app-left-side-bar>
+        <div class="m-grid__item m-grid__item--fluid m-wrapper">
+            <div class="m-subheader clearfix" style="padding: 5px 30px 0 30px!important;">
+                <h1 class="m-subheader__title pull-left">						
+                    <!-- @section('page_name')
+                        //Page name will come here
+                    @show -->
+                </h1>
+                <ol class="breadcrumb pull-right" style="background-color: inherit!important;margin-bottom: 0px!important;">
+                    <!-- @section('breadcrumbs')
+                        {{--//Breadcrumb will come here--}}
+                    @show -->
+                </ol>
+            </div>
+            <div class="m-content" style="padding-top: 5px;">
+                <!--Flash Message-->
+                <!-- @include('admin.layout.include.flash') -->
+                <!--Content-->
+                <router-outlet></router-outlet>
+            </div>
+        </div>			
+    </div>
+    <app-footer></app-footer>
+
+    <!-- Right sidebar for changing settings -->
+        <!-- @include('admin.layout.include.right_sidebar') -->
+        <app-right-side-bar></app-right-side-bar>
+</div> <!-- ./wrapper -->
+
+<!-- "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/app/dashboard.js",
+              "src/assets/js/app/custom.js"
+            ] -->
+
+            
