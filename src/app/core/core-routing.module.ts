@@ -9,8 +9,8 @@ const routes: Routes = [
    // "canActivate": [AuthGuard],
     "children": [
         {
-            "path": "angular\/ng-bootstrap",
-            "loadChildren": ".\/pages\/default\/angular\/ng-bootstrap\/ng-bootstrap.module#NgBootstrapModule"
+            "path": "",
+            "loadChildren": ""
         }
       ]
   } 
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class CoreRoutingModule { }
