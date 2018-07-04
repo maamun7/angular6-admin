@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import * as $ from "jquery";
 import { ScriptLoaderService } from './services/script-loader.service';
@@ -8,7 +8,8 @@ declare let mApp: any;
 
 @Component({
   selector: '.m-grid.m-grid--hor.m-grid--root.m-page',
-  templateUrl: './core.component.html'
+  templateUrl: './core.component.html',
+	encapsulation: ViewEncapsulation.None,
 })
 export class CoreComponent implements OnInit {
   title = 'App';

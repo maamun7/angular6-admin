@@ -3,16 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'admin',
-    pathMatch: 'full'
-  },
-
-  {
-    path: 'admin',
-    loadChildren: './features/features.module#FeaturesModule'
+    path: '', redirectTo: 'index', pathMatch: 'full'
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
