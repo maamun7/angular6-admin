@@ -1,3 +1,16 @@
 <!-- begin::Page loader -->
-<h1> Hello testing ! </h1>
-
+<div class="m-page-loader m-page-loader--non-block" style="margin-left: -80px; margin-top: -20px;">
+	<div class="m-blockui">
+		<span>
+			Please wait...
+		</span>
+		<span>
+			<div class="m-loader m-loader--brand"></div>
+		</span>
+	</div>
+</div>
+<!-- end::Page loader -->
+<!-- begin:: Page -->
+<router-outlet></router-outlet>
+<app-right-sidebar></app-right-sidebar>
+<!-- end:: Page -->

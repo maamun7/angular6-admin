@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Helpers } from './utils/helpers'
 
 @Component({
   selector: 'body',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+	encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   title = 'App';
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private _router: Router){
 
   }
-
+  
   ngOnInit() {
     this._router.events.subscribe((route) => {
       if (route instanceof NavigationStart) {

@@ -6,14 +6,14 @@ const routes: Routes = [
   {
     "path": "",
     "component": CoreComponent,
-   // "canActivate": [AuthGuard],
+    "canActivate": [],
     "children": [
-        {
-            "path": "",
-            "loadChildren": ""
-        }
-      ]
-  } 
+      {
+        "path": "index",
+        "loadChildren": "..\/features\/dashboard\/dashboard.module#DashboardModule",
+      }
+    ]
+  }
 ];
 
 @NgModule({

@@ -16,11 +16,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent
   ],
   imports: [
+    LayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreRoutingModule,
-    LayoutModule,
     NgbModule.forRoot()
   ],
   providers: [
