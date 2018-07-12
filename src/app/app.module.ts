@@ -7,6 +7,7 @@ import { CoreRoutingModule } from './core/core-routing.module';
 import { LayoutModule } from './core/layouts/layout.module';
 import { CoreComponent } from './core/core.component';
 import { AppComponent } from './app.component';
+import { AuthModule } from './features/auth/auth.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -21,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreRoutingModule,
+    AuthModule,
     NgbModule.forRoot()
   ],
   providers: [

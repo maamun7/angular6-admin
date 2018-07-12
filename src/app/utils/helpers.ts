@@ -1,6 +1,11 @@
 import * as $ from "jquery";
+import {Headers, Http, RequestOptions } from "@angular/http";
 
 export class Helpers {
+
+	static API_BASE_HOST = 'http://127.0.0.20:4040/';
+	static API_HOST = 'http://127.0.0.20:4040/admin/';
+	
 	static loadStyles(tag, src) {
 		if (Array.isArray(src)) {
 			$.each(src, function (k, s) {
@@ -60,5 +65,15 @@ export class Helpers {
 	
 	static bodyClass(strClass) {
 		$('body').attr('class', strClass);
+	}
+
+	static jwt() {
+		// create authorization header with jwt token
+		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		console.log('currentUser :', currentUser.token);
+		if (currentUser && currentUser.token) {
+			let headers = new Headers({ 'Authorization' : currentUser.token });
+			return new RequestOptions({headers: headers});
+		}
 	}
 }
