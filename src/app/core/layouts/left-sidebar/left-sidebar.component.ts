@@ -4,7 +4,7 @@ import * as $ from "jquery";
 declare let mLayout: any;
 
 @Component({
-    selector: "app-left-sidebar",
+    selector: "[app-left-sidebar]",
     templateUrl: "./left-sidebar.component.html",
     encapsulation: ViewEncapsulation.None
 })
