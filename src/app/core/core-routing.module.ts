@@ -12,6 +12,10 @@ const routes: Routes = [
       {
         "path": "index",
         "loadChildren": "..\/features\/dashboard\/dashboard.module#DashboardModule",
+      },
+      {
+        "path": "role",
+        "loadChildren": "..\/features\/role\/role.module#RoleModule",
       }
     ]
   }

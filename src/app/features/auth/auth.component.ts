@@ -1,11 +1,11 @@
-import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
-import {ScriptLoaderService} from "../../core/services/script-loader.service";
-import {AuthService} from "./_services/auth.service";
-import {AlertService} from "../../core/services/";
-import {UserService} from "./_services/user.service";
-import {AlertComponent} from "../../shared/components/alert/alert.component";
-import {Helpers} from "../../utils/helpers";
+import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ScriptLoaderService } from "../../core/services/script-loader.service";
+import { AuthService } from "./_services/auth.service";
+import { AlertService } from "../../core/services/";
+import { UserService } from "./_services/user.service";
+import { AlertComponent } from "../../shared/components/alert/alert.component";
+import { Helpers } from "../../utils/helpers";
 
 @Component({
 	selector: ".m-grid.m-grid--hor.m-grid--root.m-page",

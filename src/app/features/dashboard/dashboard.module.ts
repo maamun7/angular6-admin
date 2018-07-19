@@ -18,17 +18,22 @@ const routes: Routes = [
     }
 ];
 
-@NgModule({imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LayoutModule
-],
-exports: [
-    RouterModule
-],
-declarations: [
-    DashboardComponent
-]})
+@NgModule({
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        LayoutModule
+    ],
+
+    exports: [
+        RouterModule
+    ],
+
+
+    declarations: [
+        DashboardComponent
+    ]
+})
 
 export class DashboardModule  {
 

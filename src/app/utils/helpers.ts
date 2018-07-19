@@ -4,7 +4,7 @@ import {Headers, Http, RequestOptions } from "@angular/http";
 export class Helpers {
 
 	static API_BASE_HOST = 'http://127.0.0.20:4040/';
-	static API_HOST = 'http://127.0.0.20:4040/admin/';
+	static API_HOST = 'http://127.0.0.20:4040/av1/';
 	
 	static loadStyles(tag, src) {
 		if (Array.isArray(src)) {
@@ -70,10 +70,9 @@ export class Helpers {
 	static jwt() {
 		// create authorization header with jwt token
 		let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		console.log('currentUser :', currentUser.token);
 		if (currentUser && currentUser.token) {
 			let headers = new Headers({ 'Authorization' : currentUser.token });
-			return new RequestOptions({headers: headers});
+			return new RequestOptions({ headers: headers });
 		}
 	}
 }
