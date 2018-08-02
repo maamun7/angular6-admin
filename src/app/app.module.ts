@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './features/auth/auth.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './features/auth/_interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent
   ],
   imports: [
-    LayoutModule,
     BrowserModule,
+    HttpClientModule,
+    LayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreRoutingModule,
@@ -26,7 +29,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot()
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue : '/' }
+    { provide: APP_BASE_HREF,
+      useValue : '/' 
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
