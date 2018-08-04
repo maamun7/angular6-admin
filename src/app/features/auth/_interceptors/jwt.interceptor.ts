@@ -1,33 +1,42 @@
-
 import { Injectable } from '@angular/core';
+import { Observable } from "rxjs";
+import 'rxjs/add/operator/catch';
 import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from "rxjs";
 import { AuthService } from '../_services/auth.service';
+import { Router, RouterStateSnapshot } from "@angular/router";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
-  constructor(public auth: AuthService) { }
+  constructor(public _auth: AuthService, public _router: Router) { }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Calling interceptor !+++++++');
-    const token = this.auth.getToken();
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log("intercepted request ... ");
+    const authToken = this._auth.getToken();
    // const newReq = request.clone({setHeaders: {'Authorization': token } });
-   // return next.handle(newReq);
-
-    const authReq = request.clone({
+    const authReq = req.clone({
       setHeaders: {
         'Content-Type': 'application/json',
-        Authorization: token
+        Authorization: authToken
       }
     });
 
-
-    return next.handle(authReq);
+  //  return next.handle(authReq);
+    return next.handle(authReq)
+      .catch((error, caught) => {
+          if (error.status === 401) {
+            console.log('DEBUGG :', "Yes unauthorized !");
+              this._auth.removeToken();
+              this._router.navigate(['/login']);
+              return Observable.throw(error);
+          } else {
+              return Observable.throw(error);
+          }
+      }) as any;
   }
 }
