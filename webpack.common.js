@@ -73,7 +73,9 @@ module.exports = function makeWebpackConfig() {
         }),
 
         new webpack.LoaderOptionsPlugin({
-            options: {
+            options: {htmlLoader : {
+                minimize : false
+            },
                 /**
                  * Apply the tslint loader as pre/postLoader
                  * Reference: https://github.com/wbuchwalter/tslint-loader

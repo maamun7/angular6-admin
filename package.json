@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "clean": "rimraf doc dist coverage",
-    "start": "webpack-dev-server --config webpack.dev.js --inline --progress --profile --port 8080",
+    "start": "webpack-dev-server --config webpack.dev.js --inline --progress --profile --port 8082  --mode development",
     "build": "npm run clean && webpack --progress --profile --bail --config webpack.dev.js",
     "build:prod": "npm run clean && webpack --progress --profile --bail --config webpack.release.js --mode production",
     "lint": "tslint --force \"src/**/*.ts\"",
@@ -44,7 +44,9 @@
     "autoprefixer": "^9.1.0",
     "codelyzer": "~4.2.1",
     "copy-webpack-plugin": "^4.5.2",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -53,14 +55,17 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2",
+    "url-loader": "^1.0.1",
     "webpack": "^4.16.5",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "webpack-visualizer-plugin": "^0.1.11"
   }
 }

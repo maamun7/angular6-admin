@@ -16,7 +16,7 @@ export class RoleComponent implements OnInit, AfterViewInit {
     model: any = {};
 	loading = false;
     returnUrl: string;
-    private roleList: Role[] = [];
+    public roleList: Role[] = [];
 
     constructor(
         private _alertService: AlertService,
